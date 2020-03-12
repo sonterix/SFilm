@@ -1,0 +1,80 @@
+footer#footer {
+    padding: 15px 0;
+    margin-top: 20px;
+    background-color: $c-black;
+    
+    .footer__level-1 {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-gap: 10px;
+        align-items: center;
+        
+        .level-1__logo {
+            padding: 10px;
+            max-width: 100px;
+
+            a {
+                display: block;
+
+                > img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .level-1__nav {
+
+            > ul {
+                text-align: center;
+
+                .level-1__nav-link-box {
+                    display: inline-block;
+                    margin: 0 15px;
+
+                    .level-1__nav-link {
+                        display: block;
+                        padding: 5px;
+                        font-size: $f-size-md;
+                        color: $c-white;
+                        transition: $t-default;
+
+                        &:hover {
+                            color: $c-primary-red;
+                        }
+                    }
+                }
+            }
+        }
+
+        .level-1__social {
+            
+            ul {
+                text-align: right;
+
+                .level-1__social-link-box {
+                    display: inline-block;
+                    margin: 0 5px;
+
+                    .level-1__social-link {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 5px;
+                        width: 40px;
+                        height: 40px;
+                        font-size: $f-size-lg - 4px;
+                        color: $c-white;
+                        background-color: rgba($c-white, 0.1);
+                        border-radius: 50%;
+                        transition: $t-default;
+
+                        &:hover {
+                            color: $c-white;
+                            background-color: $c-primary-red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

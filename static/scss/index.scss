@@ -1,0 +1,61 @@
+@import 'variables';
+
+body {
+    margin: 0;
+    background-color: $c-bg;
+    opacity: 0;
+    transition: $t-onload;
+
+    * {
+        font-family: $default-font;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $primary-font;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding: 0 15px;
+        max-width: $lg + 30px;
+        width: 100%;
+
+        &.relative {
+            position: relative;
+        }
+    }
+
+    ::selection {
+        color: $c-white;
+        background-color: rgba($c-primary-red, 0.5);
+    }
+}
+
+@import 'header';
+@import 'movie-list';
+@import 'footer';
+
+@import 'animations'

@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+    <section id="movie-list__header">
+        <div class="movie-list__hero" style="background-image: url({% static 'images/movie-list-bg.jpg' %})">
+            <div class="container relative">
+                <h1 class="hero__title">Movies</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="movie-list__content" class="container">
+        <aside id="movie-list__sidebar-wrapper">
+            <div class="movie-list__sidebar">
+                <div class="sidebar__search">
+                    <input type="text" class="sidebar__search-field" placeholder="Search..">
+                    <button class="sidebar__search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="sidebar__filter">
+                    <div class="sidebar__filter-item">
+                        <h3>Genre</h3>
+                        <ul class="filter-item-list">
+                            <li>Action</li>
+                            <li>Comedy</li>
+                            <li>Horror</li>
+                        </ul>
+                    </div>
+                    <div class="sidebar__filter-item">
+                        <h3>Year</h3>
+                        <ul class="filter-item-list">
+                            <li>2014</li>
+                            <li>2015</li>
+                            <li>2016</li>
+                            <li>2017</li>
+                            <li>2018</li>
+                            <li>2019</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div id="movie-list__list">
+            {% for movie in movie_list %}
+                <a href="{{ movie.get_absolute_urt }}" class="movie-card">
+                    <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" class="movie-card__image">
+                    <p class="movie-card__title">{{ movie.title }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,160 @@
+section#movie-list__header {
+    padding-bottom: 20px;
+
+    .movie-list__hero {
+        position: relative;
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        min-height: 600px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($c-black, 0.8);
+            z-index: 1;
+        }
+
+        > .container {
+            min-height: inherit;
+
+            .hero__title {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                margin: 0;
+                color: $c-white;
+                font-size: $f-size-xlg * 2;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                z-index: 2;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 8px;
+                    background-color: $c-primary-red;
+                    border-radius: 3px;
+                }
+            }
+        }
+
+    }
+}
+
+section#movie-list__content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    #movie-list__sidebar-wrapper {
+
+        .movie-list__sidebar {
+            padding: 25px 15px;
+            background-color: $c-black;
+            border-radius: 5px;
+
+            .sidebar__search {
+                position: relative;
+                margin-bottom: 25px;
+
+                .sidebar__search-field {
+                    padding: 10px 15px;
+                    padding-right: 45px;
+                    width: 100%;
+                    font-size: $f-size-md - 2px;
+                    border: none;
+                }
+
+                .sidebar__search-btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 40px;
+                    background-color: transparent;
+                    border: none;
+                    transition: $t-default;
+                    z-index: 1;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $c-primary-red;
+                    }
+                }
+            }
+
+            .sidebar__filter {
+
+                .sidebar__filter-item {
+                    padding: 10px 0;
+                    color: $c-white;
+
+                    > h3 {
+                        margin: 0;
+                        margin-bottom: 15px;
+                        font-size: $f-size-lg;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                    }
+
+                    .filter-item-list {
+
+                        > li {
+                            position: relative;
+                            padding: 5px 0;
+                            transition: $t-default;
+                            cursor: pointer;
+
+                            &:hover {
+                                left: 2px;
+                                color: $c-primary-red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #movie-list__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+
+        .movie-card {
+            display: block;
+
+            .movie-card__image {
+                width: 100%;
+                transition: $t-default;
+            }
+
+            .movie-card__title {
+                margin: 0;
+                padding: 10px 0;
+                text-align: center;
+                color: $c-white;
+            }
+
+            &:hover {
+
+                .movie-card__image {
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
